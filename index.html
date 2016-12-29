@@ -1,0 +1,59 @@
+<!doctype html>
+<html ng-app="demo">
+	<head>
+		<title>Hello AngularJS</title>
+
+		 <link href="./bootstrap/css/bootstrap.css" rel="stylesheet">
+		  <link href="./bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+		  <link href="./css/main.css" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    	<script src="./js/controller.js"></script>
+	</head>
+
+	<body>
+		<div ng-controller="Hello" class="greeting">
+			<div class="time">
+				<p ng-bind ="CurrentDate"></p>
+				<p class="timet" ng-bind ="CurrentTime"></p>
+			</div>
+			<div class="weather">
+			<h3>
+				<span ng-bind="name"></span>
+			</h3>
+				<div class="temperature">
+				<img src="{{imageFile}}"/> 
+				<!-- <img src="http://openweathermap.org/img/w/03d.png"> -->
+					<span>
+						<span ng-bind = "temp"></span><sup class="deg dir-ltr">°</sup>
+						<span>F</span>
+					</span>
+				</div>
+			<h4><span ng-bind = "description"></span></h4>
+			<div class="temp_max_min">
+			<span>High</span>
+			<span ng-bind="temp_max"></span>
+			<sup class="deg dir-ltr">°</sup>
+						<span>F</span>
+			<span>/</span>
+			<span>Low</span>
+			<span ng-bind="temp_min">L</span>
+			<sup class="deg dir-ltr">°</sup>
+						<span>F</span>
+			</div>
+			<div>
+				<span>sunrise</span>
+				<span ng-bind="sunrise"></span>
+				<br>
+				<span>sunset</span>
+				<span ng-bind="sunset"></span>
+			</div>
+			</div>
+			<div class="news" >
+				<ul ng-repeat="article in articles">
+        			<li>{{article.title}}</li>
+        			<li>{{article.description}}</li>
+    			</ul>
+			</div>
+		</div>
+	</body>
+</html>
