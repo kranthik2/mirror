@@ -1,0 +1,26 @@
+{
+  "name": "mirror",
+  "version": "1.0.0",
+  "description": "magic mirror node app",
+  "main": "main.js",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kranthy/Mirror.git"
+  },
+  "keywords": [
+    "mirror"
+  ],
+  "author": "kranthi kumar kulli",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kranthy/Mirror/issues"
+  },
+  "homepage": "https://github.com/kranthy/Mirror#readme"
+}

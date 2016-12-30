@@ -1,0 +1,58 @@
+body{	
+	margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    line-height: 20px;
+    color: #ffffff;
+    background-color: #1b1b1b;
+}
+div{
+	padding: 4px;
+}
+
+.time{
+	float: left;
+	margin: 5% 7% 7% 4%;
+    font-size: -webkit-xxx-large;
+
+}
+.time p{
+	padding-top: 36px;
+    padding-left: 20px;
+}
+.timet {
+	font-size: 80px;
+}
+.weather{
+	float: right;
+	width: 38%;
+	padding: 30px 4px 4px 4px;
+    margin-top: 4%;
+}
+.weather h3, h4{
+	margin-left: 69px;
+}
+.temp{
+    font-size: 8rem;
+    font-weight: 600;
+}
+.dir-ltr{
+	line-height: normal;
+    font-size: 5rem;
+}
+.sunlight, .temp_max_min{
+	margin-left: 69px
+}
+.news{
+    padding-left: 200px;
+    padding-right: 200px;
+    height: 125px; 
+    overflow: auto;
+}
+.news_hdr{
+	padding-left: 200px;
+	margin-top: 600px;
+}
+.news p{
+	font-size: 16px;
+}
