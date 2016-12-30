@@ -11,9 +11,9 @@ div{
 }
 
 .time{
-	float: left;
-	margin: 5% 7% 7% 4%;
-    font-size: -webkit-xxx-large;
+    float: left;
+    margin-top: 7%;
+    font-size: 40px;
 
 }
 .time p{
@@ -44,14 +44,15 @@ div{
 	margin-left: 69px
 }
 .news{
-    padding-left: 200px;
-    padding-right: 200px;
-    height: 125px; 
+    padding-left: 100px;
+    padding-right: 100px;
+    height: 150px;
     overflow: auto;
+    overflow-y: hidden;
 }
 .news_hdr{
-	padding-left: 200px;
-	margin-top: 600px;
+	padding-left: 100px;
+	margin-top: 1200px;
 }
 .news p{
 	font-size: 16px;

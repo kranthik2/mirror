@@ -1,7 +1,11 @@
 angular.module('mirror', ['luegg.directives'])
 .controller('Mirror', function($scope, $http,$filter,$timeout) {
-	 $scope.CurrentDate = $filter('date')(new Date(), 'MMMM dd, yyyy');
-     $scope.CurrentTime = $filter('date')(new Date(), 'hh:mm a');
+	$scope.CurrentDate = $filter('date')(new Date(), 'MMMM dd, yyyy');
+	function updateTime(){
+	$scope.CurrentTime = $filter('date')(new Date(), 'hh:mm a');
+	$timeout(updateTime,1000);
+	}
+$timeout(updateTime,1000);
     $http.get('http://api.openweathermap.org/data/2.5/weather?id=4692559&appid=3875c7dc417bbcd77b03e13a8279c453')
         .then(function(response) {
         $scope.name=response.data.name;
