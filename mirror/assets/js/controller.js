@@ -1,12 +1,19 @@
 angular.module('mirror', ['luegg.directives'])
-.controller('Mirror', function($scope, $http,$filter,$timeout) {
+.controller('Mirror', function($scope, $http,$filter,$timeout,$interval) {
 	$scope.CurrentDate = $filter('date')(new Date(), 'MMMM dd, yyyy');
 	function updateTime(){
-	$scope.CurrentTime = $filter('date')(new Date(), 'hh:mm a');
-	$timeout(updateTime,1000);
+		$scope.CurrentTime = $filter('date')(new Date(), 'hh:mm a');
 	}
-$timeout(updateTime,1000);
-    $http.get('http://api.openweathermap.org/data/2.5/weather?id=4692559&appid=3875c7dc417bbcd77b03e13a8279c453')
+	$interval(updateTime,1000);
+	getWeatherAndNews($http,$scope,$timeout);
+	function updateWeatherAndNews(){
+	console.log("update weather");
+		getWeatherAndNews($http,$scope,$timeout);
+	}
+	$interval(updateWeatherAndNews,300000);
+});
+function getWeatherAndNews($http,$scope,$timeout){
+ $http.get('http://api.openweathermap.org/data/2.5/weather?id=4692559&appid=3875c7dc417bbcd77b03e13a8279c453')
         .then(function(response) {
         $scope.name=response.data.name;
         $scope.temp = convertToFahrenheit(response.data.main.temp);
@@ -32,7 +39,7 @@ $http({
           function addItem(){
             $scope.articles.push(response.data.articles[counter++]);
             $timeout(addItem, 10000);
-            console.log(counter);
+          //  console.log(counter);
             if(counter == length){
                 counter=0;
             }
@@ -42,8 +49,7 @@ $http({
   }, function errorCallback(response) {
    
   });
-});
-
+}
 function convertToFahrenheit(value){
 	var fahr = (value - 273.15)* 1.8000 + 32.00;
 	return fahr.toFixed(0);

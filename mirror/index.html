@@ -22,7 +22,7 @@
 				<span ng-bind="name"></span><span>,TX</span>
 			</h3>
 				<div class="temperature">
-				<img src="{{imageFile}}"/> 
+				<img src="{{imageFile}}"> 
 				<!-- <img src="http://openweathermap.org/img/w/03d.png"> -->
 					<span>
 						<span ng-bind = "temp" class="temp"></span><sup class="temp dir-ltr">°</sup>
@@ -31,12 +31,10 @@
 				</div>
 			<h3 ng-bind = "description"></h3>
 			<div class="temp_max_min">
-			<span>High</span>
+			<span>&#9650; High</span>
 			<span ng-bind="temp_max"></span>
 			<sup class="">°</sup>
-						<!-- <span>F</span> -->
-			<span>/</span>
-			<span>Low</span>
+			<span>&#9660; Low</span>
 			<span ng-bind="temp_min">L</span>
 			<sup class="">°</sup>
 						<!-- <span>F</span> -->
