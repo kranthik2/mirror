@@ -2,17 +2,18 @@
 <html ng-app="mirror">
 	<head>
 		<title>Magic Mirror</title>
-
-		 <link href="./assets/bootstrap/css/bootstrap.css" rel="stylesheet">
-		  <link href="./assets/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-		  <link href="./assets/css/main.css" rel="stylesheet">
-		 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.js"></script>
-   		 <script src="https://cdn.rawgit.com/Luegg/angularjs-scroll-glue/master/src/scrollglue.js"></script>
-    	<script src="./assets/js/controller.js"></script>
+		<link href="/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<link href="/assets/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+		<link href="/assets/css/main.css" rel="stylesheet"/>
+		<script src="/scripts/angular/angular.js"></script>
+		<script src="/scripts/angular-google-chart/ng-google-chart.js"></script>
+		<script src="/scripts/angular-cookies/angular-cookies.js"></script>
+   		<script src="/scripts/angularjs-scroll-glue/src/scrollglue.js"></script>
+    	<script src="/assets/js/controller.js"></script>
 	</head>
 
 	<body>
-		<div ng-controller="Mirror" class="greeting">
+		<div ng-controller="mirrorCntrl" class="greeting">
 			<div class="time">
 				<p ng-bind ="CurrentDate"></p>
 				<p class="timet" ng-bind ="CurrentTime"></p>
@@ -47,6 +48,9 @@
 				<span ng-bind="sunset"></span>
 			</div> -->
 			</div>
+			<!--style="height:600px; width:100%;"-->
+			<div google-chart chart="stepsChart" class="steps_chart"></div>
+			<div google-chart chart="caloriesChart" class="calories_chart"></div>
 			<h2 class="news_hdr">Top Stories</h2>
 			<div class="news" scroll-glue>
 				<span ng-repeat="article in articles track by $index" >

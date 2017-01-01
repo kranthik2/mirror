@@ -4,7 +4,11 @@
   "description": "magic mirror node app",
   "main": "main.js",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "angular" : "^1.6.1",
+    "angular-google-chart":"^0.1.0",
+    "angularjs-scroll-glue":"^2.1.0",
+    "angular-cookies":"^1.6.1"
   },
   "devDependencies": {},
   "scripts": {
