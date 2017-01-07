@@ -8,8 +8,8 @@ const mongo = require('mongoskin');
 const cookieParser = require('cookie-parser');
 const server = express();
 
-server.use("/scripts", express.static(__dirname + '/node_modules/'));
-server.use("/static", express.static(__dirname + '/assets/'));
+server.use("/public", express.static(__dirname + '/dist/'));
+server.use("/app", express.static(__dirname + '/dist/'));
 const http = require('http').Server(server);
 passport.serializeUser(function(user, done) {
     done(null, user);
@@ -62,7 +62,7 @@ server.get('/auth/callback',
     }),
     function(req, res) {
         res.cookie('oauth_access_token',req.user.token,{ maxAge: 900000});
-        res.redirect('/static/index.html');
+        res.redirect('/app/index.html');
     }
 );
 

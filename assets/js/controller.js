@@ -13,7 +13,7 @@ mirrorApp.factory('mirrorFactory', ['$http', '$cookies', function($http, $cookie
         var accessToken = $cookies.get('oauth_access_token');
         return $http({
             method: 'GET',
-            url: 'https://api.fitbit.com/1/user/53N758/activities/steps/date/today/1w.json',
+            url: 'https://api.fitbit.com/1/user/-/activities/steps/date/today/1w.json',
             headers: {
                 'Authorization': 'Bearer ' + accessToken
             }
@@ -24,7 +24,7 @@ mirrorApp.factory('mirrorFactory', ['$http', '$cookies', function($http, $cookie
         var accessToken = $cookies.get('oauth_access_token');
         return $http({
             method: 'GET',
-            url: 'https://api.fitbit.com/1/user/53N758/activities/calories/date/today/1w.json',
+            url: 'https://api.fitbit.com/1/user/-/activities/calories/date/today/1w.json',
             headers: {
                 'Authorization': 'Bearer ' + accessToken
             }
@@ -35,7 +35,7 @@ mirrorApp.factory('mirrorFactory', ['$http', '$cookies', function($http, $cookie
         var accessToken = $cookies.get('oauth_access_token');
         return $http({
             method: 'GET',
-            url: 'https://api.fitbit.com/1/user/53N758/activities/date/today.json',
+            url: 'https://api.fitbit.com/1/user/-/activities/date/today.json',
             headers: {
                 'Authorization': 'Bearer ' + accessToken
             }
@@ -130,32 +130,6 @@ mirrorApp.controller('mirrorCntrl', ['$scope', '$filter', '$interval', '$timeout
     $interval(getActivitySteps, 180000);
     $interval(getActivityCalories, 180000);
 }]);
-
-
-function getRefreshToken($http, $scope, $cookies, $httpParamSerializer) {
-    $http({
-        method: 'POST',
-        url: 'https://api.fitbit.com/oauth2/token',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8;',
-            'Authorization': 'Basic MjI4N0tIOjUwMzVlNTU2ZDdlYjcwMjdmYjQ1MGE3MzkzMGFjZjYy'
-        },
-        params: {
-            'grant_type': 'refresh_token',
-            'refresh_token': refresh_token,
-            'code': 'e659fa1e80be5e5cc8db37ddba4af7ad3d918ec6'
-        },
-        transformRequest: $httpParamSerializer
-    }).then(function successCallback(response) {
-        console.log(response.data);
-        accessToken = response.data.access_token;
-        refresh_token = response.data.refresh_token;
-        console.log(refresh_token);
-    }, function errorCallback(response) {
-
-    });
-
-}
 
 function buildStepsChart($scope, activities) {
     // var chartType=chartType;
