@@ -9,7 +9,6 @@ const cookieParser = require('cookie-parser');
 const server = express();
 
 server.use("/scripts", express.static(__dirname + '/node_modules/'));
-// server.use("/mirror", express.static(__dirname + '/mirror/'));
 server.use("/static", express.static(__dirname + '/assets/'));
 const http = require('http').Server(server);
 passport.serializeUser(function(user, done) {
@@ -40,8 +39,6 @@ server.use(passport.initialize());
 server.use(passport.session());
 server.use(cookieParser());
 const host = process.env.HOST || 'http://localhost:8080';
-console.log(process.env.ClientID);
-console.log(process.env.ClientSecret);
 passport.use(new FitbitStrategy({
         clientID: process.env.ClientID,
         clientSecret: process.env.ClientSecret,
