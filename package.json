@@ -1,30 +1,39 @@
 {
-  "name": "mirror",
-  "version": "1.0.0",
-  "description": "magic mirror node app",
-  "main": "main.js",
-  "dependencies": {
-    "express": "^4.14.0",
-    "angular" : "^1.6.1",
-    "angular-google-chart":"^0.1.0",
-    "angularjs-scroll-glue":"^2.1.0",
-    "angular-cookies":"^1.6.1"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kranthy/Mirror.git"
-  },
-  "keywords": [
-    "mirror"
-  ],
-  "author": "kranthi kumar kulli",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/kranthy/Mirror/issues"
-  },
-  "homepage": "https://github.com/kranthy/Mirror#readme"
+    "name": "mirror",
+    "version": "1.0.0",
+    "description": "magic mirror node app",
+    "main": "main.js",
+    "dependencies": {
+        "express": "^4.14.0",
+        "angular": "^1.6.1",
+        "angular-google-chart": "^0.1.0",
+        "angularjs-scroll-glue": "^2.1.0",
+        "angular-cookies": "^1.6.1",
+        "passport-fitbit-oauth2":"^1.0.2",
+        "passport":"^0.3.2",
+        "mongoose":"^4.7.5",
+        "mongoose-findorcreate":"^0.1.2",
+        "express-session":"^1.14.2",
+        "connect-mongodb-session":"^1.3.0",
+        "body-parser":"^1.15.2",
+        "mongoskin":"^2.1.0",
+        "cookie-parser":"^1.4.3"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kranthy/Mirror.git"
+    },
+    "keywords": [
+        "mirror"
+    ],
+    "author": "kranthi kumar kulli",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/kranthy/Mirror/issues"
+    },
+    "homepage": "https://github.com/kranthy/Mirror#readme"
 }
