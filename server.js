@@ -31,7 +31,7 @@ db.bind('measurements');
 
 server.use(bodyParser.json());
 server.use(session({
-    secret: process.env.SESSION_SECRET || 'adsfdsfga',
+    secret: process.env.SESSION_SECRET || 'jujubi',
     store
 }));
 
@@ -61,7 +61,9 @@ server.get('/auth/callback',
         failureRedirect: '/login'
     }),
     function(req, res) {
-        res.cookie('oauth_access_token',req.user.token,{ maxAge: 900000});
+        res.cookie('oauth_access_token', req.user.token, {
+            maxAge: 900000
+        });
         res.redirect('/app/index.html');
     }
 );

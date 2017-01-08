@@ -79,13 +79,13 @@ mirrorApp.controller('mirrorCntrl', ['$scope', '$filter', '$interval', '$timeout
 
                 function addItem() {
                     $scope.articles.push(response.data.articles[counter++]);
-                    $timeout(addItem, 10000);
+                    $timeout(addItem, 30000);
                     //  console.log(counter);
                     if (counter == length) {
                         counter = 0;
                     }
                 }
-                $timeout(addItem, 10000);
+                $timeout(addItem, 30000);
             }, function(error) {
                 $scope.response = "Something went wrong";
             });
@@ -139,80 +139,57 @@ function buildStepsChart($scope, activities) {
 
     $scope.stepsChart.data = {
         "cols": [{
-                id: "t",
-                label: "Date",
-                type: "string"
-            },
-            {
-                id: "s",
-                label: "Steps",
-                type: "number"
-            }
-        ],
+            id: "t",
+            label: "Date",
+            type: "string"
+        }, {
+            id: "s",
+            label: "Steps",
+            type: "number"
+        }],
         "rows": [{
-                c: [{
-                        v: convertDate(activities[0].dateTime)
-                    },
-                    {
-                        v: activities[0].value
-                    }
-                ]
-            },
-            {
-                c: [{
-                        v: convertDate(activities[1].dateTime)
-                    },
-                    {
-                        v: activities[1].value
-                    }
-                ]
-            },
-            {
-                c: [{
-                        v: convertDate(activities[2].dateTime)
-                    },
-                    {
-                        v: activities[2].value
-                    }
-                ]
-            },
-            {
-                c: [{
-                        v: convertDate(activities[3].dateTime)
-                    },
-                    {
-                        v: activities[3].value
-                    },
-                ]
-            },
-            {
-                c: [{
-                        v: convertDate(activities[4].dateTime)
-                    },
-                    {
-                        v: activities[4].value
-                    }
-                ]
-            },
-            {
-                c: [{
-                        v: convertDate(activities[5].dateTime)
-                    },
-                    {
-                        v: activities[5].value
-                    }
-                ]
-            },
-            {
-                c: [{
-                        v: convertDate(activities[6].dateTime)
-                    },
-                    {
-                        v: activities[6].value
-                    }
-                ]
-            }
-        ]
+            c: [{
+                v: convertDate(activities[0].dateTime)
+            }, {
+                v: activities[0].value
+            }]
+        }, {
+            c: [{
+                v: convertDate(activities[1].dateTime)
+            }, {
+                v: activities[1].value
+            }]
+        }, {
+            c: [{
+                v: convertDate(activities[2].dateTime)
+            }, {
+                v: activities[2].value
+            }]
+        }, {
+            c: [{
+                v: convertDate(activities[3].dateTime)
+            }, {
+                v: activities[3].value
+            }, ]
+        }, {
+            c: [{
+                v: convertDate(activities[4].dateTime)
+            }, {
+                v: activities[4].value
+            }]
+        }, {
+            c: [{
+                v: convertDate(activities[5].dateTime)
+            }, {
+                v: activities[5].value
+            }]
+        }, {
+            c: [{
+                v: convertDate(activities[6].dateTime)
+            }, {
+                v: activities[6].value
+            }]
+        }]
     };
 
     $scope.stepsChart.options = {
@@ -253,80 +230,57 @@ function buildCaloriesChart($scope, activities) {
 
     $scope.caloriesChart.data = {
         "cols": [{
-                id: "t",
-                label: "Date",
-                type: "string"
-            },
-            {
-                id: "s",
-                label: "Calories",
-                type: "number"
-            }
-        ],
+            id: "t",
+            label: "Date",
+            type: "string"
+        }, {
+            id: "s",
+            label: "Calories",
+            type: "number"
+        }],
         "rows": [{
-                c: [{
-                        v: convertDate(activities[0].dateTime)
-                    },
-                    {
-                        v: activities[0].value
-                    }
-                ]
-            },
-            {
-                c: [{
-                        v: convertDate(activities[1].dateTime)
-                    },
-                    {
-                        v: activities[1].value
-                    }
-                ]
-            },
-            {
-                c: [{
-                        v: convertDate(activities[2].dateTime)
-                    },
-                    {
-                        v: activities[2].value
-                    }
-                ]
-            },
-            {
-                c: [{
-                        v: convertDate(activities[3].dateTime)
-                    },
-                    {
-                        v: activities[3].value
-                    },
-                ]
-            },
-            {
-                c: [{
-                        v: convertDate(activities[4].dateTime)
-                    },
-                    {
-                        v: activities[4].value
-                    }
-                ]
-            },
-            {
-                c: [{
-                        v: convertDate(activities[5].dateTime)
-                    },
-                    {
-                        v: activities[5].value
-                    }
-                ]
-            },
-            {
-                c: [{
-                        v: convertDate(activities[6].dateTime)
-                    },
-                    {
-                        v: activities[6].value
-                    }
-                ]
-            }
-        ]
+            c: [{
+                v: convertDate(activities[0].dateTime)
+            }, {
+                v: activities[0].value
+            }]
+        }, {
+            c: [{
+                v: convertDate(activities[1].dateTime)
+            }, {
+                v: activities[1].value
+            }]
+        }, {
+            c: [{
+                v: convertDate(activities[2].dateTime)
+            }, {
+                v: activities[2].value
+            }]
+        }, {
+            c: [{
+                v: convertDate(activities[3].dateTime)
+            }, {
+                v: activities[3].value
+            }, ]
+        }, {
+            c: [{
+                v: convertDate(activities[4].dateTime)
+            }, {
+                v: activities[4].value
+            }]
+        }, {
+            c: [{
+                v: convertDate(activities[5].dateTime)
+            }, {
+                v: activities[5].value
+            }]
+        }, {
+            c: [{
+                v: convertDate(activities[6].dateTime)
+            }, {
+                v: activities[6].value
+            }]
+        }]
     };
 
     $scope.caloriesChart.options = {
@@ -371,35 +325,27 @@ function dailyGoalChart($scope, response) {
 
     $scope.goalChart.data = {
         "cols": [{
-                id: "t",
-                label: "Goal",
-                type: "string"
-            },
-            {
-                id: "s",
-                label: "Steps",
-                type: "number"
-            }
-        ],
+            id: "t",
+            label: "Goal",
+            type: "string"
+        }, {
+            id: "s",
+            label: "Steps",
+            type: "number"
+        }],
         "rows": [{
-                c: [{
-                        v: "goal"
-                    },
-                    {
-                        v: remainingGoal
-                    },
-                ]
-            },
-            {
-                c: [{
-                        v: "steps"
-                    },
-                    {
-                        v: response.data.summary.steps
-                    }
-                ]
-            }
-        ]
+            c: [{
+                v: "goal"
+            }, {
+                v: remainingGoal
+            }, ]
+        }, {
+            c: [{
+                v: "steps"
+            }, {
+                v: response.data.summary.steps
+            }]
+        }]
     };
 
     $scope.goalChart.options = {
@@ -412,8 +358,8 @@ function dailyGoalChart($scope, response) {
         colors: ['#000000', '#ffffff'],
         pieHole: 0.7,
         legend: 'none'
-        //pieSliceText: 'value',
-        // position: 'labeled'
+            //pieSliceText: 'value',
+            // position: 'labeled'
     };
 }
 
