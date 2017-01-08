@@ -8,7 +8,7 @@ const mongo = require('mongoskin');
 const cookieParser = require('cookie-parser');
 const server = express();
 
-server.use("/public", express.static(__dirname + '/dist/'));
+server.use("/static", express.static(__dirname + '/dist/'));
 server.use("/app", express.static(__dirname + '/dist/'));
 const http = require('http').Server(server);
 passport.serializeUser(function(user, done) {
